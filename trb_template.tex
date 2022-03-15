@@ -7,6 +7,8 @@
 \documentclass{trbunofficial}
 \usepackage{graphicx}
 \usepackage{ctex}
+\usepackage{romannum}
+\usepackage{zhlipsum}
 
 
 % \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
@@ -41,42 +43,29 @@
 \maketitle
 
 \section{摘要}
-
-全球导航卫星系统（GNSS）使用卫星与无线电通信为自动驾驶汽车（AV）提供定位、导航和定时（PNT）服务。然而，由于缺少信号加密，同时GNSS粗提取码（C/A）的具有公开可获得性，以及GNSS信号较低的信号强度，GNSS很容易受到欺骗性攻击，从而使得AV的导航能力受到损害。欺骗性攻击往往很难被发现，因为欺骗者（实施欺骗性攻击的攻击者）可以模仿GNSS信号并向AV传输不准确的位置坐标。在这项研究中，我们利用长短期记忆（LSTM）模型（一种循环神经网络模型）开发了一种基于预测的欺骗攻击检测策略。LSTM模型常被用来预测自主车辆的两个连续位置之间的距离，为了开发LSTM预测模型，在本项研究中，我们将使用一个名为comma2k19的公开真实世界驾驶数据集。该训练数据集包含不同的特征（即加速度、方向盘角度、速度和两个连续位置之间的行驶
-距离），这些特征是从汽车的控制区域网络（CAN）、GNSS模块和惯性测量单元（IMU）传感器中提取的。根据对自主车辆当前位置和下一个位置之间的行驶距离进行预测，利用GNSS设备的定位误差和当前位置域下一个位置之间行驶距离的预测误差（即最大绝对误差）， 建立一个阈值。我们的分析显示，基于预测的欺骗性攻击检测策略可以成功且实时地检测到攻击。
+\input{data/abstract.tex}
 
 
 \hfill\break%
 \noindent\textit{关键词}: GNSS，自动驾驶汽车，网络安全，欺骗性攻击，LSTM
 \newpage
 
-\section{Introduction}
-The \citep{TRBGuide} has unique and somewhat arbitrary requirements for papers submitted for review and publication. While the initial submission is required to be in PDF format, submissions for publication in Transportation Research Record must be in Microsoft Office format. On top of this, the manuscripts must be line-numbered, captions are bolded and employ atypical punctuation, and the references must be numbered when cited and then printed in order. More details about the manuscript details can be found online at~\url{http://onlinepubs.trb.org/onlinepubs/AM/InfoForAuthors.pdf}.
-
-It is assumed that the readers of this document have some significant level of experience in \LaTeX~and \verb1bibtex1. As use of literate programming becomes more widespread in engineering and planning, it is possible that this template may need to be made more robust.
+\section{引言}
+\input{data/introduction.tex}
 
 
-\subsection{History}
-David Pritchard posted the original versions of this template in 2009 and updated it in 2011, soon after TRB began allowing PDF submissions. Gregory Macfarlane made significant adaptations to it in March 2012, allowing for Sweave integration and automatic word and table counts. Ross Wang automated the total word count and made some formatting modifications in July 2015. Version 2.1.1 has been made available on GitHub in January, 2016.  Version 3.1 has been made available on Github (\url{https://github.com/chiehrosswang/TRB_LaTeX_rnw}) in June, 2017.  Versions 2.1.1 Lite and 3.1 Lite were made available on GitHub (\url{https://github.com/chiehrosswang/TRB_LaTeX_tex}) in June, 2017 for users who do not need R and Sweave functions provided in the original verions.  
+\section{本研究的贡献}
+\input{data/contribution.tex}
 
 
-\section{Features}
-The template has a number of features that enable quick and painless manuscript authoring.
+\section{相关工作}
+\input{data/related_work.tex}
 
-\subsection{Title Page}
-The standard \LaTeX\ \verb1\maketitle1 command is not very versatile, so we have replaced it with a \verb1titlepage1 environment. This means that the writers will be required to manually enter spacings based on the number of contributors, but the current settings (12pt between authors, 36pt before, and 60pt after them) seems to work well. 
+\section{数据集描述与数据处理}
+\input{data/dataset.tex}
 
-Near the bottom of the title page, TRB requires a count of the manuscript's words, figures, and tables. This template generates these counts automatically. The figure and table counts are simply pulled from the \LaTeX\ counters using the \verb1totcount1 package. The word count feature is not as straight-forward, as it utilizes a call to the system command \verb1texcount1. Thus to compile the document writers must enable \verb#\write18# in their \verb1pdflatex1 call.
-
-In the newest version of this template, we added the total count automatically. The total count basically adds not only the word count, but also the equivalent count (250 words) for each table.  Note that starting from 2018, Figures no longer count toward total word counts.  However, each paper can have only up to 6 figures in total.  The total word count is implemented using a customized command \verb1\totalwordcount1.  Please see the original code for more information.
-
-\subsection{Page Layout}
-The document has 1 inch margins as required, with the author's names in the left heading and the page number in the right. The authors heading will need to be edited by the writers; automating this from the title page command is not currently possible. Paragraphs leading sections and subsections are not indented, while all subsequent paragraphs in that section are. Section types are defined as outlined by the \citep{TRBGuide}.
-
-The document is single-spaced in 12 point Times font. Times New Roman is a proprietary font and is therefore not available by installation in open-source software. While the differences between Times variants are negligible, Times New Roman itself can be used in Mac OSX by compiling under \verb1xelatex1.
-
-\subsubsection{Line Numbers}
-Manuscript line numbering is implemented using the \verb1lineno1 package. There are options to change the font style and type, but the current settings work well. Note that the line numbers refresh each page, and that blank lines do not receive a number. Currently, line numbers and headers are not shown on the title page, but can be easily added by adding \verb1\pagewiselinenumbers1 command right before the beginning of the title page.
+\section{预测模型的开发}
+\input{data/prediction_model_development.tex}
 
 \section{Captions}
 Figure~\ref{fig:trial} shows a Gumbel distribution as an example of captioning. As demonstrated, figure captions ought to be sentence capitalized, balded, and can be somewhat longer than in other journals.
@@ -111,7 +100,6 @@ Table captions are somewhat different, requiring initial capitals and are more o
 The TRB bibliography style is defined in the \verb1trb.bst1 file which should be in your document folder. A renewed command is specified, \verb1\citep{}1 which will print the authors and the number of the reference in the order in which it is supplied. Note that \verb1\citep{}1 prints both the author names and the reference number, if you simply need the number of the reference, use command
 \verb|\cite{}|. The References section will be appended to the end of the document.
 
-It is very easy to add reference to papers programs written by \citep{Bierlaire2003} and \citep{Bierlaire2008} or to papers like those written by \citep{Garrow2009} and \citep{Koppelman2005}. You can even go back and refer to Biog\'eme by \citep{Bierlaire2008} a second time. You can also cite a group of similar references without printing author names \cite{TRBGuide,Bierlaire2003}. This template also groups multiple reference numbers together if there are three or more consecutive numbers \cite{Bierlaire2003,Bierlaire2008,Garrow2009,Koppelman2005}.
 
 \subsection{Equations}
 Intelligent driver model equations from wikipedia (\url{https://en.wikipedia.org/wiki/Intelligent_driver_model}) moved to the left using \verb1amsmath1 package with \verb1fleqn1 options.

@@ -4,17 +4,18 @@
 % version 4.0 Lite (updates made to be compatible in Overleaf and ShareLaTeX)
 % 
 % When numbered option is activated, lines are numbered.
-\documentclass[numbered]{trbunofficial}
+\documentclass{trbunofficial}
 \usepackage{graphicx}
+\usepackage{ctex}
+
 
 % \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
 % For TRB version hide links
 \usepackage[hidelinks]{hyperref}
 
 % Put here what will go to headers as author
-\AuthorHeaders{Pritchard, Macfarlane, and Wang}
-\title{A \LaTeX\ Template for Papers Submitted to the Transportation
-Research Board}
+\AuthorHeaders{Dasgupta, Rahman, Islam and Chowdhury}
+\title{基于预测的自动驾驶GNSS欺骗攻击检测}
 
 % TODO: add macros for easier formatting of \author.
 \author{%
@@ -39,12 +40,14 @@ Research Board}
 \begin{document}
 \maketitle
 
-\section{Abstract}
+\section{摘要}
 
-The Transportation Research Board (TRB) has unique and seemingly arbitrary requirements for manuscripts submitted for review. These requirements make it difficult to write the manuscripts quickly, and no existing \LaTeX\ style comes close to fooling the guidelines. This represents an initial effort at creating a template to meet the requirements of TRB authors using \LaTeX, R, Sweave, and/or other literate programming software.
+全球导航卫星系统（GNSS）使用卫星与无线电通信为自动驾驶汽车（AV）提供定位、导航和定时（PNT）服务。然而，由于缺少信号加密，同时GNSS粗提取码（C/A）的具有公开可获得性，以及GNSS信号较低的信号强度，GNSS很容易受到欺骗性攻击，从而使得AV的导航能力受到损害。欺骗性攻击往往很难被发现，因为欺骗者（实施欺骗性攻击的攻击者）可以模仿GNSS信号并向AV传输不准确的位置坐标。在这项研究中，我们利用长短期记忆（LSTM）模型（一种循环神经网络模型）开发了一种基于预测的欺骗攻击检测策略。LSTM模型常被用来预测自主车辆的两个连续位置之间的距离，为了开发LSTM预测模型，在本项研究中，我们将使用一个名为comma2k19的公开真实世界驾驶数据集。该训练数据集包含不同的特征（即加速度、方向盘角度、速度和两个连续位置之间的行驶
+距离），这些特征是从汽车的控制区域网络（CAN）、GNSS模块和惯性测量单元（IMU）传感器中提取的。根据对自主车辆当前位置和下一个位置之间的行驶距离进行预测，利用GNSS设备的定位误差和当前位置域下一个位置之间行驶距离的预测误差（即最大绝对误差）， 建立一个阈值。我们的分析显示，基于预测的欺骗性攻击检测策略可以成功且实时地检测到攻击。
+
 
 \hfill\break%
-\noindent\textit{Keywords}: Keyword1, Keyword2
+\noindent\textit{关键词}: GNSS，自动驾驶汽车，网络安全，欺骗性攻击，LSTM
 \newpage
 
 \section{Introduction}

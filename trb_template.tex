@@ -5,11 +5,11 @@
 % 
 % When numbered option is activated, lines are numbered.
 \documentclass{trbunofficial}
+\usepackage{subfigure}
 \usepackage{graphicx}
 \usepackage{ctex}
 \usepackage{romannum}
 \usepackage{zhlipsum}
-
 
 % \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
 % For TRB version hide links
@@ -22,13 +22,35 @@
 
 % TODO: add macros for easier formatting of \author.
 \author{%
-  \textbf{David Pritchard}\\
-  davidpritchard.org\\
+  \textbf{Sagar Dasgupta*}\\
+  \textbf{Ph.D. Student}\\
+  Department of Civil, Construction and Environmental Engineering\\
+  University of Alabama, Tuscaloosa\\
+  Tel: (864) 624-6210; Email: sdasgupta@crimson.ua.edu\\
+
   \hfill\break% this is a way to add line numbering on empty line
-  \textbf{Gregory S. Macfarlane, Ph.D.}\\
+  \textbf{Mizanur Rahman, Ph.D.}\\
+  \textbf{Postdoctoral Fellow}\\
+  Center for Connected Multimodal Mobility (C²M²)\\
+  Glenn Department of Civil Engineering, Clemson University\\
+  127 Lowry Hall, Clemson, SC 29634\\
+  Tel: (864) 650-2926; Email: mdr@clemson.edu\\
+  
   \hfill\break%
-  \textbf{Chieh (Ross) Wang, Ph.D., Corresponding Author}\\
-  cwang@ornl.gov
+  \textbf{Mhafuzul Islam}\\
+  \textbf{Ph.D. Student}\\
+  Glenn Department of Civil Engineering, Clemson University\\
+  351 Flour Daniel, Clemson, SC 29634\\
+  Tel: (864) 986-5446; Fax: (864) 656-2670\\
+  Email: mdmhafi@clemson.edu\\
+
+  \hfill\break
+  \textbf{Mashrur Chowdhury, Ph.D., P.E., F.ASCE}\\
+  \textbf{Eugene Douglas Mays Professor of Transportation}\\
+  Glenn Department of Civil Engineering, Clemson University\\
+  216 Lowry Hall, Clemson, SC 29634\\
+  Tel: (864) 656-3313 Fax: (864) 656-2670\\
+  Email: mac@clemson.edu
 }
 
 % If necessary modify the number of words per table or figure default is set to
@@ -38,10 +60,10 @@
 % If words are counted manually, put that number here. This does not include
 % figures and tables. This can also be used to avoid problems with texcount
 % program i.e. if one does not have it installed.
-% \TotalWords{200}
+\TotalWords{4898}
+
 
 \begin{document}
-\renewcommand{\figurename}{图}
 \maketitle
 
 \section{摘要}
@@ -75,43 +97,8 @@
 \section{结论}
 \input{data/conclusion.tex}
 
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.6\textwidth]{trb_template-gumbel}
-  \caption{This is a random figure to test the counting functionality on the title page. It shows a Gumbel distribution with mode 0 and scale 1. The multinomial logit model assumes that the error terms are distributed identically and independently following this pattern.}\label{fig:trial}
-\end{figure}
-
-
-\begin{table}[!ht]
-	\caption{A History of this Template}\label{tab:versions}
-	\begin{center}
-		\begin{tabular}{l l l l}
-			Version & Date & Author & Contributions \\\hline
-			1.0   & Sep 2009 & Pritchard & Initial work \\
-			1.1   & Mar 2011 & Pritchard & Captions \\
-			2.0   & Mar 2012 & Macfarlane& Automation, documentation\\
-			2.1   & Jul 2015 & Wang      & More automation and formatting\\
-			2.1.1 & Jan 2016 & Wang      & Minor modifications and uploaded to Github\\
-			2.1.1 Lite & Jun 2017 & Wang & \TeX-only template \\
-			3.1   & Jun 2017 & Wang      & Addition of \verb1trbunofficial.cls1\\
-			3.1 Lite & Jun 2017 & Wang   & Addition of \verb1trbunofficial.cls1\\
-			4.0 Lite & Jul 2019 & Wang   & Word count updates for Overleaf/ShareLaTeX compatibility\\\hline
-		\end{tabular}
-	\end{center}
-\end{table}
-
-
-\begin{linenomath}
-  \begin{flalign}
-    &\dot{x}_\alpha = \frac{\mathrm{d}x_\alpha}{\mathrm{d}t} = v_\alpha \\
-    &\dot{v}_\alpha = \frac{\mathrm{d}v_\alpha}{\mathrm{d}t} = a\,\left( 1 - \left(\frac{v_\alpha}{v_0}\right)^\delta - \left(\frac{s^*(v_\alpha,\Delta v_\alpha)}{s_\alpha}\right)^2 \right)
-  \end{flalign}
-\end{linenomath}
-
-
-
-\section{Acknowledgments}
-The authors would like to thank Aleksandar Trifunovic (\url{https://github.com/akstrfn}) for creating the \verb1trbunofficial1 class document, which has been a very helpful improvement.
+\section{作者贡献}
+作者对本文的贡献如下：构思和设计：S. Dasgupta, M. Rahman, M. Islam, and M. Chowdhury；数据收集：S. Dasgupta和M. Rahman；结果解释：S. Dasgupta, M. Rahman,M. Islam, and M. Chowdhury; 稿件草稿准备：S. Dasgupta, M. Rahman, M. Islam, and M. Chowdhury。所有作者都复核了研究结果并批准了稿件的最终版本。
 
 \newpage
 

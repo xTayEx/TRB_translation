@@ -64,7 +64,7 @@
 % HEADINGS
 %------------------------------------------------------------------------------
 % Line spacing: 12pt before section titles
-\renewcommand*{\refname}{\uppercase{References}}
+\renewcommand*{\refname}{\uppercase{参考文献}}
 \titleformat{\section}{\bfseries}{}{0pt}{\uppercase}
 \titlespacing*{\section}{0pt}{12pt}{*0}
 \titleformat{\subsection}{\bfseries}{}{0pt}{}
@@ -95,8 +95,8 @@
 %------------------------------------------------------------------------------ 
 % Get the captions right. Authors must still be careful to use "Title Case"
 % for table captions, and "Sentence case." for figure captions.
-\renewcommand{\fnum@figure}{\bfseries FIGURE~\thefigure}
-\renewcommand{\fnum@table}{\bfseries TABLE~\thetable}
+\renewcommand{\fnum@figure}{\bfseries 图~\thefigure}
+\renewcommand{\fnum@table}{\bfseries 表~\thetable}
 \captiontitlefont{\bfseries \boldmath}
 \captiondelim{\;}
 %\precaption{\boldmath}
@@ -183,13 +183,15 @@
 \renewcommand{\maketitle}{%
 	\thispagestyle{empty}
 	\begin{flushleft}
-		{\MakeUppercase{\bfseries\@title}}\\
+		{\MakeUppercase{\bfseries\Large{\@title}}}\\
 		\hfill\break%
 		\hfill\break%
 		\hfill\break%
 		\@author\\
 		\hfill\break%
 		\hfill\break%
+		*Corresponding author\\
+		\hfill\break
 		\if\@TotalWords 0
 		Word Count: \quickwordcount{trb_template}~words $+$ \total{table} table(s) $\times$ \@WordsPerTable\ $=$ \totalwordcount~words\\
 		\else
@@ -197,11 +199,8 @@
 		\fi
 		\hfill\break%
 		\hfill\break%
-		\hfill\break%
-		\hfill\break%
-		\hfill\break%
-		\hfill\break%
-		Submission Date: \trbdate
+		Paper accepted for presentation at the Transportation Research Board 100th Annual Meeting.
+		% Submission Date: \trbdate
 	\end{flushleft}
 	\newpage
 }

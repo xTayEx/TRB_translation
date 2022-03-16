@@ -15,6 +15,7 @@
 % For TRB version hide links
 \usepackage[hidelinks]{hyperref}
 
+
 % Put here what will go to headers as author
 \AuthorHeaders{Dasgupta, Rahman, Islam and Chowdhury}
 \title{基于预测的自动驾驶GNSS欺骗攻击检测}
@@ -40,6 +41,7 @@
 % \TotalWords{200}
 
 \begin{document}
+\renewcommand{\figurename}{图}
 \maketitle
 
 \section{摘要}
@@ -67,8 +69,11 @@
 \section{预测模型的开发}
 \input{data/prediction_model_development.tex}
 
-\section{Captions}
-Figure~\ref{fig:trial} shows a Gumbel distribution as an example of captioning. As demonstrated, figure captions ought to be sentence capitalized, balded, and can be somewhat longer than in other journals.
+\section{自动驾驶汽车上的GNSS攻击}
+\input{data/GNSS_spoofing_attack_on_AVs.tex}
+
+\section{结论}
+\input{data/conclusion.tex}
 
 \begin{figure}[!ht]
   \centering
@@ -76,7 +81,6 @@ Figure~\ref{fig:trial} shows a Gumbel distribution as an example of captioning. 
   \caption{This is a random figure to test the counting functionality on the title page. It shows a Gumbel distribution with mode 0 and scale 1. The multinomial logit model assumes that the error terms are distributed identically and independently following this pattern.}\label{fig:trial}
 \end{figure}
 
-Table captions are somewhat different, requiring initial capitals and are more of a title. An example of this is given in Table~\ref{tab:versions}, showing the history of this template.
 
 \begin{table}[!ht]
 	\caption{A History of this Template}\label{tab:versions}
@@ -96,13 +100,6 @@ Table captions are somewhat different, requiring initial capitals and are more o
 	\end{center}
 \end{table}
 
-\subsection{Bibliography}
-The TRB bibliography style is defined in the \verb1trb.bst1 file which should be in your document folder. A renewed command is specified, \verb1\citep{}1 which will print the authors and the number of the reference in the order in which it is supplied. Note that \verb1\citep{}1 prints both the author names and the reference number, if you simply need the number of the reference, use command
-\verb|\cite{}|. The References section will be appended to the end of the document.
-
-
-\subsection{Equations}
-Intelligent driver model equations from wikipedia (\url{https://en.wikipedia.org/wiki/Intelligent_driver_model}) moved to the left using \verb1amsmath1 package with \verb1fleqn1 options.
 
 \begin{linenomath}
   \begin{flalign}
@@ -111,24 +108,7 @@ Intelligent driver model equations from wikipedia (\url{https://en.wikipedia.org
   \end{flalign}
 \end{linenomath}
 
-\begin{linenomath}
-  \begin{equation}
-  s^*(v_\alpha,\Delta v_\alpha) = s_0 + v_\alpha\,T + \frac{v_\alpha\,\Delta v_\alpha}{2\,\sqrt{a\,b}}
-  \end{equation}
-\end{linenomath}
 
-\section{To Do's}
-Two document types, extending from the \verb1[numbered]1 option, can be defined to differentiate the initial submission (i.e., with line numbers and in-line figures and tables) and the final manuscript (i.e., without line numbers and all figures and tables are attached to the end).
-
-\section{Conclusion}
-To make the document from source in a Unix-like OS, issue the following commands:
-\begin{verbatim}
-    latexmk trb_template.tex -pdf -pvc -shell-escape
-\end{verbatim}
-
-The \verb1--shell-escape1 option is required to access the command line for the word count. Normally this feature is disabled because it is a route of entry for malicious software. We promise that there is no such debilitating code in this document, and we encourage you to examine any scripts for suspicious code before permitting \verb1pdflatex1 from accessing your system.
-
-Perl is necessary for ``texcount'' to work and needs a Perl interpreter e.g. [ActivePerl](\url{http://www.activestate.com/activeperl/downloads}).
 
 \section{Acknowledgments}
 The authors would like to thank Aleksandar Trifunovic (\url{https://github.com/akstrfn}) for creating the \verb1trbunofficial1 class document, which has been a very helpful improvement.
